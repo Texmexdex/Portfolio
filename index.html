@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeXmExDeX | Type Tools & Tunes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="grain"></div>
+    
+    <canvas id="particleCanvas"></canvas>
+    <canvas id="leftColumn" class="side-column left-column"></canvas>
+    <canvas id="rightColumn" class="side-column right-column"></canvas>
+    
+    <header class="header">
+        <div class="container">
+            <h1 class="title" data-particle-text="TeXmExDeX">TeXmExDeX</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="projects-grid">
+            <!-- Generative Lotus -->
+            <article class="project-card">
+                <a href="https://texmexdex.github.io/Generative-Lotus/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <iframe src="https://texmexdex.github.io/Generative-Lotus/" class="project-iframe" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">Generative Lotus</h2>
+                        <p class="project-description">Procedurally generated lotus flower patterns with interactive controls.</p>
+                        <div class="project-tags">
+                            <span class="tag">Generative</span>
+                            <span class="tag">Art</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- ScreenSynth -->
+            <article class="project-card">
+                <a href="https://texmexdex.github.io/screensynth/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <iframe src="https://texmexdex.github.io/screensynth/" class="project-iframe" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">ScreenSynth</h2>
+                        <p class="project-description">Screen-based audio synthesis and visual feedback system.</p>
+                        <div class="project-tags">
+                            <span class="tag">Audio</span>
+                            <span class="tag">Synthesis</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Circle of Myphs -->
+            <article class="project-card">
+                <a href="https://texmexdex.github.io/CircleOfMyphs/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <iframe src="https://texmexdex.github.io/CircleOfMyphs/" class="project-iframe" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">Circle of Myphs</h2>
+                        <p class="project-description">Circular pattern generator with mythological aesthetics.</p>
+                        <div class="project-tags">
+                            <span class="tag">Patterns</span>
+                            <span class="tag">Generative</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- GL Fractal -->
+            <article class="project-card">
+                <a href="https://texmexdex.github.io/glfractal/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <iframe src="https://texmexdex.github.io/glfractal/" class="project-iframe" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">GL Fractal</h2>
+                        <p class="project-description">WebGL-powered fractal explorer with real-time rendering.</p>
+                        <div class="project-tags">
+                            <span class="tag">WebGL</span>
+                            <span class="tag">Fractals</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Modular Mathematical Visualization -->
+            <article class="project-card">
+                <a href="https://texmexdex.github.io/Modular-Mathematical-Visualization/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <iframe src="https://texmexdex.github.io/Modular-Mathematical-Visualization/" class="project-iframe" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">Modular Math Viz</h2>
+                        <p class="project-description">Interactive mathematical visualization with modular components.</p>
+                        <div class="project-tags">
+                            <span class="tag">Math</span>
+                            <span class="tag">Visualization</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- VHSRANDOVHS -->
+            <article class="project-card">
+                <a href="https://texmexdex.github.io/VHSRANDOVHS/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <iframe src="https://texmexdex.github.io/VHSRANDOVHS/" class="project-iframe" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">VHSRANDOVHS</h2>
+                        <p class="project-description">Retro VHS aesthetic generator with randomization effects.</p>
+                        <div class="project-tags">
+                            <span class="tag">VHS</span>
+                            <span class="tag">Retro</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Tex's Music Mezcla -->
+            <article class="project-card">
+                <a href="https://github.com/Texmexdex/Texs-Music-Mezcla" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <img src="https://raw.githubusercontent.com/Texmexdex/Texs-Music-Mezcla/main/screenshot.png" alt="Tex's Music Mezcla Screenshot" class="project-screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="screenshot-fallback" style="display: none;">
+                            <div class="fallback-content">
+                                <h3>TeX's Music Mezcla</h3>
+                                <p>Creative Vocal Blender</p>
+                            </div>
+                        </div>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">Tex's Music Mezcla</h2>
+                        <p class="project-description">Music mixing and blending tool for creative audio production.</p>
+                        <div class="project-tags">
+                            <span class="tag">Music</span>
+                            <span class="tag">Audio</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Gaussian -->
+            <article class="project-card">
+                <a href="https://texmexdex.github.io/Gaussian/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <iframe src="https://texmexdex.github.io/Gaussian/" class="project-iframe" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">Gaussian</h2>
+                        <p class="project-description">Gaussian blur and distribution visualization tool.</p>
+                        <div class="project-tags">
+                            <span class="tag">Math</span>
+                            <span class="tag">Visual</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- TexTunes -->
+            <article class="project-card">
+                <a href="https://texmexdex.github.io/TexTunes/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <iframe src="https://texmexdex.github.io/TexTunes/" class="project-iframe" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">TexTunes</h2>
+                        <p class="project-description">Audio-visual music player with dynamic visualizations.</p>
+                        <div class="project-tags">
+                            <span class="tag">Music</span>
+                            <span class="tag">Visualization</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Iridescent Plasma -->
+            <article class="project-card">
+                <a href="https://www.shadertoy.com/view/tXfBz2" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <img src="./screenshots/Iridescent_Plasma.png" alt="Iridescent Plasma" class="project-screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="screenshot-fallback" style="display: none;">
+                            <div class="fallback-content">
+                                <h3>Iridescent Plasma</h3>
+                                <p>Shadertoy Shader</p>
+                            </div>
+                        </div>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">Iridescent Plasma</h2>
+                        <p class="project-description">Mesmerizing shader with flowing iridescent plasma effects.</p>
+                        <div class="project-tags">
+                            <span class="tag">Shader</span>
+                            <span class="tag">GLSL</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Eye of Phi -->
+            <article class="project-card">
+                <a href="https://www.shadertoy.com/view/WclBRN" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <img src="./screenshots/Eye_Of_Phi.png" alt="Eye of Phi" class="project-screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="screenshot-fallback" style="display: none;">
+                            <div class="fallback-content">
+                                <h3>Eye of Phi</h3>
+                                <p>Shadertoy Shader</p>
+                            </div>
+                        </div>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">Eye of Phi</h2>
+                        <p class="project-description">Golden ratio inspired visual with hypnotic eye patterns.</p>
+                        <div class="project-tags">
+                            <span class="tag">Shader</span>
+                            <span class="tag">Math</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Praeterea Nihil -->
+            <article class="project-card">
+                <a href="https://www.shadertoy.com/view/tXGSWK" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <img src="./screenshots/Praeterea_Nihil.png" alt="Praeterea Nihil" class="project-screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="screenshot-fallback" style="display: none;">
+                            <div class="fallback-content">
+                                <h3>Praeterea Nihil</h3>
+                                <p>Shadertoy Shader</p>
+                            </div>
+                        </div>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">Praeterea Nihil</h2>
+                        <p class="project-description">Abstract shader exploration with complex geometric forms.</p>
+                        <div class="project-tags">
+                            <span class="tag">Shader</span>
+                            <span class="tag">Abstract</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Undulating Urchin -->
+            <article class="project-card">
+                <a href="https://www.shadertoy.com/view/wfXfz4" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <img src="./screenshots/Undulating_Urchin.png" alt="Undulating Urchin" class="project-screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="screenshot-fallback" style="display: none;">
+                            <div class="fallback-content">
+                                <h3>Undulating Urchin</h3>
+                                <p>Shadertoy Shader</p>
+                            </div>
+                        </div>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">Undulating Urchin</h2>
+                        <p class="project-description">Audio reactive fork with organic undulating motion.</p>
+                        <div class="project-tags">
+                            <span class="tag">Shader</span>
+                            <span class="tag">Audio</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Tautological Redundancy -->
+            <article class="project-card">
+                <a href="https://www.shadertoy.com/view/W3KSD3" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <img src="./screenshots/Tautological_Redundancy.png" alt="Tautological Redundancy" class="project-screenshot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="screenshot-fallback" style="display: none;">
+                            <div class="fallback-content">
+                                <h3>Tautological Redundancy</h3>
+                                <p>Shadertoy Shader</p>
+                            </div>
+                        </div>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">Tautological Redundancy</h2>
+                        <p class="project-description">Recursive patterns creating self-referential visual loops.</p>
+                        <div class="project-tags">
+                            <span class="tag">Shader</span>
+                            <span class="tag">Recursive</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Common Captures -->
+            <article class="project-card">
+                <a href="https://texmexdex.github.io/CommonCaptures/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <div class="iframe-container">
+                        <iframe src="https://texmexdex.github.io/CommonCaptures/" class="project-iframe" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+                        <div class="iframe-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h2 class="project-title">Common Captures</h2>
+                        <p class="project-description">Visual capture and manipulation tool for creative expression.</p>
+                        <div class="project-tags">
+                            <span class="tag">Visual</span>
+                            <span class="tag">Interactive</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/TeXmExDeX" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.shadertoy.com/user/TeXmExDeX" target="_blank" rel="noopener noreferrer">Shadertoy</a>
+                <a href="mailto:TeXmExDeX11@gmail.com">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2025 TeXmExDeX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
