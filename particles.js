@@ -32,9 +32,18 @@ class ParticleText {
     }
 
     setupEventListeners() {
+        let resizeTimeout;
         window.addEventListener('resize', () => {
             this.resizeCanvas();
-            // Don't recreate particles on resize, just let them adjust
+            // Recreate particles on resize to adjust for new font sizes
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                this.startForming = false;
+                this.createParticles();
+                setTimeout(() => {
+                    this.startForming = true;
+                }, 500);
+            }, 250);
         });
 
         // Throttle mouse movement for performance
