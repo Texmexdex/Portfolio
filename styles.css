@@ -109,18 +109,26 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
     gap: 2rem;
     padding: 2rem 0 4rem;
     position: relative;
     z-index: 2;
-    justify-items: center;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.project-card:last-child {
-    grid-column: 2;
+@media (min-width: 769px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .project-card:last-child {
+        grid-column: 2;
+    }
 }
 
 .project-card {
@@ -130,10 +138,18 @@ body {
     border: 1px solid var(--border);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
+    width: 100%;
+    max-width: 500px;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+}
+
+@media (min-width: 769px) {
+    .project-card {
+        max-width: none;
+    }
 }
 
 .project-card::before {
@@ -360,10 +376,7 @@ body {
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-    }
-    
-    .project-card:last-child {
-        grid-column: 1;
+        justify-items: center;
     }
     
     .header {
@@ -375,6 +388,8 @@ body {
         font-size: clamp(3rem, 12vw, 5rem);
         text-align: center;
         width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .subtitle {
@@ -385,6 +400,8 @@ body {
     .container {
         padding: 0 1.5rem;
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .iframe-container {
@@ -394,6 +411,8 @@ body {
     .footer {
         padding: 2.5rem 0;
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .footer-links {
@@ -416,12 +435,6 @@ body {
     
     .side-column {
         display: none;
-    }
-    
-    /* iOS Safari specific fixes */
-    .project-card {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
     }
 }
 
@@ -459,22 +472,7 @@ body {
 /* iOS and Safari specific optimizations */
 @supports (-webkit-touch-callout: none) {
     body {
-        /* Prevent iOS Safari bounce scroll on body */
-        position: fixed;
-        width: 100%;
-        overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
-    }
-    
-    html {
-        overflow: hidden;
-        height: 100%;
-    }
-    
-    body {
-        position: relative;
-        height: 100%;
-        overflow-y: auto;
     }
 }
 
