@@ -16,6 +16,10 @@ class ParticleText {
     init() {
         this.resizeCanvas();
         
+        // Detect mobile devices for performance optimization
+        this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+                        || window.innerWidth < 768;
+        
         // Wait for fonts to load, then delay particle creation
         document.fonts.ready.then(() => {
             this.createParticles();
@@ -48,15 +52,40 @@ class ParticleText {
 
         // Throttle mouse movement for performance
         let mouseTimeout;
-        window.addEventListener('mousemove', (e) => {
+        const updateMousePosition = (x, y) => {
             if (!mouseTimeout) {
                 mouseTimeout = setTimeout(() => {
-                    this.mouse.x = e.x;
-                    this.mouse.y = e.y;
+                    this.mouse.x = x;
+                    this.mouse.y = y;
                     mouseTimeout = null;
                 }, 16); // ~60fps
             }
+        };
+        
+        window.addEventListener('mousemove', (e) => {
+            updateMousePosition(e.x, e.y);
         });
+        
+        // Touch support for mobile devices
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                const touch = e.touches[0];
+                updateMousePosition(touch.clientX, touch.clientY);
+            }
+        }, { passive: true });
+        
+        window.addEventListener('touchstart', (e) => {
+            if (e.touches.length > 0) {
+                const touch = e.touches[0];
+                this.mouse.x = touch.clientX;
+                this.mouse.y = touch.clientY;
+            }
+        }, { passive: true });
+        
+        window.addEventListener('touchend', () => {
+            this.mouse.x = null;
+            this.mouse.y = null;
+        }, { passive: true });
         
         // Pause animation when page is not visible
         document.addEventListener('visibilitychange', () => {
@@ -121,8 +150,8 @@ class ParticleText {
         const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
         const pixels = imageData.data;
         
-        // Optimized gap for performance vs quality
-        const gap = Math.max(2, Math.floor(textData.fontSize / 25));
+        // Optimized gap for performance vs quality (larger gap on mobile)
+        const gap = this.isMobile ? Math.max(3, Math.floor(textData.fontSize / 20)) : Math.max(2, Math.floor(textData.fontSize / 25));
         
         // First pass: identify edge pixels with thicker borders
         const edgePixels = [];

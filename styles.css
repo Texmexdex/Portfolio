@@ -14,6 +14,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -23,6 +30,9 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
 }
 
 .side-column {
@@ -120,6 +130,10 @@ body {
     border: 1px solid var(--border);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .project-card::before {
@@ -303,6 +317,11 @@ body {
     transition: color 0.2s ease, transform 0.2s ease;
     position: relative;
     display: inline-block;
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-links a::after {
@@ -336,6 +355,7 @@ body {
     }
 }
 
+/* Tablet and mobile devices */
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
@@ -386,6 +406,8 @@ body {
     
     .footer-links a {
         font-size: 1.1rem;
+        min-height: 44px;
+        padding: 0.5rem 1rem;
     }
     
     .copyright {
@@ -394,6 +416,12 @@ body {
     
     .side-column {
         display: none;
+    }
+    
+    /* iOS Safari specific fixes */
+    .project-card {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
     }
 }
 
@@ -423,6 +451,45 @@ body {
     
     .footer-links a {
         font-size: 1rem;
+        min-height: 44px;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* iOS and Safari specific optimizations */
+@supports (-webkit-touch-callout: none) {
+    body {
+        /* Prevent iOS Safari bounce scroll on body */
+        position: fixed;
+        width: 100%;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    html {
+        overflow: hidden;
+        height: 100%;
+    }
+    
+    body {
+        position: relative;
+        height: 100%;
+        overflow-y: auto;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+    .header {
+        padding: 2rem 0 1.5rem;
+    }
+    
+    .title {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+    }
+    
+    .subtitle {
+        font-size: clamp(0.9rem, 3vw, 1.2rem);
     }
 }
 
