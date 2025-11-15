@@ -99,14 +99,18 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(3, minmax(380px, 1fr));
     gap: 2rem;
     padding: 2rem 0 4rem;
     position: relative;
     z-index: 2;
-    justify-content: center;
+    justify-items: center;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+.project-card:last-child {
+    grid-column: 2;
 }
 
 .project-card {
